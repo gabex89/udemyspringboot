@@ -5,8 +5,25 @@
     <title>List of vets</title>
 </head>
 <body>
+<!--/*@thymesVar id="vet" type="com.smoothspark.petclinic.model.Vet"*/-->
 
 <h1 th:text="'List of vets'">List of vets</h1>
 
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>First name</th>
+        <th>Last name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="vet : ${vets}">
+        <td th:text="${vet.id}">1</td>
+        <td th:text="${vet.firstName}">First name</td>
+        <td th:text="${vet.lastName}">Last name</td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>
