@@ -2,12 +2,14 @@ package com.smoothspark.petclinic.service.map;
 
 import com.smoothspark.petclinic.model.Vet;
 import com.smoothspark.petclinic.service.VetService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 /**
  * Created by SmoothSpark in 10/30/2018
  */
+@Service
 public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
 
     @Override

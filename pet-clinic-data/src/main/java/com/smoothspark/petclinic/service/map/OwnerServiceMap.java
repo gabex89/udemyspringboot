@@ -2,12 +2,14 @@ package com.smoothspark.petclinic.service.map;
 
 import com.smoothspark.petclinic.model.Owner;
 import com.smoothspark.petclinic.service.OwnerService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 /**
  * Created by SmoothSpark in 10/30/2018
  */
+@Service
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
     @Override
