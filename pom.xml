@@ -5,7 +5,7 @@
 
     <groupId>com.smoothspark</groupId>
     <artifactId>pet-clinic</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
 
     <modules>
         <module>pet-clinic-web</module>
@@ -50,6 +50,7 @@
 
     <scm>
         <developerConnection>scm:git:git@github.com:gabex89/udemyspringboot.git</developerConnection>
+        <tag>pet-clinic-0.0.1</tag>
     </scm>
 
 </project>

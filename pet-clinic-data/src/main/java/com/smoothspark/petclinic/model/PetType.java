@@ -3,7 +3,7 @@ package com.smoothspark.petclinic.model;
 /**
  * Created by SmoothSpark in 2018. 10. 12.
  */
-public class PetType {
+public class PetType extends BaseEntity {
 
     private String name;
 

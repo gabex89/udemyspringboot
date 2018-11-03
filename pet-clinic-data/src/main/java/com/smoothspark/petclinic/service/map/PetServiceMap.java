@@ -1,14 +1,14 @@
 package com.smoothspark.petclinic.service.map;
 
 import com.smoothspark.petclinic.model.Pet;
-import com.smoothspark.petclinic.service.CrudService;
+import com.smoothspark.petclinic.service.PetService;
 
 import java.util.Set;
 
 /**
  * Created by SmoothSpark in 10/30/2018
  */
-public class PetServiceMap extends AbstractMapService<Pet, Long> implements CrudService<Pet, Long> {
+public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService {
 
     @Override
     public Set<Pet> findAll() {

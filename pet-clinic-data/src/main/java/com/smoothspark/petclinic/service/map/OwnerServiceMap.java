@@ -1,14 +1,14 @@
 package com.smoothspark.petclinic.service.map;
 
 import com.smoothspark.petclinic.model.Owner;
-import com.smoothspark.petclinic.service.CrudService;
+import com.smoothspark.petclinic.service.OwnerService;
 
 import java.util.Set;
 
 /**
  * Created by SmoothSpark in 10/30/2018
  */
-public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements CrudService<Owner, Long> {
+public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
     @Override
     public Set<Owner> findAll() {
@@ -33,5 +33,10 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
     @Override
     public Owner findById(Long id) {
         return super.findById(id);
+    }
+
+    @Override
+    public Owner findByLastName(String lastName) {
+        return null;
     }
 }
