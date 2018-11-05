@@ -1,7 +1,11 @@
 package com.smoothspark.petclinic.service.map;
 
 import com.smoothspark.petclinic.model.Owner;
+import com.smoothspark.petclinic.model.Pet;
+import com.smoothspark.petclinic.model.PetType;
 import com.smoothspark.petclinic.service.OwnerService;
+import com.smoothspark.petclinic.service.PetService;
+import com.smoothspark.petclinic.service.PetTypeService;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
@@ -11,6 +15,14 @@ import java.util.Set;
  */
 @Service
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
+
+    private final PetTypeService petTypeService;
+    private final PetService petService;
+
+    public OwnerServiceMap(PetTypeService petTypeService, PetService petService) {
+        this.petTypeService = petTypeService;
+        this.petService = petService;
+    }
 
     @Override
     public Set<Owner> findAll() {
@@ -29,7 +41,27 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
 
     @Override
     public Owner save(Owner owner) {
-        return super.save(owner);
+        if (owner != null) {
+            if (owner.getPets() != null) {
+                owner.getPets().forEach(pet -> {
+                    PetType petType = pet.getPetType();
+                    if (petType != null) {
+                        if (petType.getId() == null) {
+                            pet.setPetType(petTypeService.save(petType));
+                        }
+                    } else {
+                        throw new RuntimeException("Pet type cannot be null");
+                    }
+                    if (pet.getId() == null) {
+                        Pet savedPet = petService.save(pet);
+                        pet.setId(savedPet.getId());
+                    }
+                });
+            }
+            return super.save(owner);
+        } else {
+            return null;
+        }
     }
 
     @Override
