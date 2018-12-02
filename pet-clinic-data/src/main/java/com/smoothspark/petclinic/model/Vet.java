@@ -1,20 +1,32 @@
 package com.smoothspark.petclinic.model;
 
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 import java.util.HashSet;
 import java.util.Set;
 
 /**
  * Created by SmoothSpark in 2018. 10. 12.
  */
+@Entity
+@Table(name = "vets")
 public class Vet extends Person {
 
-    private Set<Speciality> specialities = new HashSet<>();
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "vet_specialties",
+            joinColumns = @JoinColumn(name = "vet_id"),
+            inverseJoinColumns = @JoinColumn(name = "specialties_id"))
+    private Set<Specialty> specialties = new HashSet<>();
 
-    public Set<Speciality> getSpecialities() {
-        return specialities;
+    public Set<Specialty> getSpecialties() {
+        return specialties;
     }
 
-    public void setSpecialities(Set<Speciality> specialities) {
-        this.specialities = specialities;
+    public void setSpecialties(Set<Specialty> specialties) {
+        this.specialties = specialties;
     }
 }

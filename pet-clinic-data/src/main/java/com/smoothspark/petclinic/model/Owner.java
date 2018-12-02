@@ -24,7 +24,7 @@ public class Owner extends Person {
     @Column(name = "telephones")
     private String telephone;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "owners")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
     private Set<Pet> pets = new HashSet<>();
 
     public String getAddress() {

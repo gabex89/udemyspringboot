@@ -1,6 +1,6 @@
 package com.smoothspark.petclinic.service.map;
 
-import com.smoothspark.petclinic.model.Speciality;
+import com.smoothspark.petclinic.model.Specialty;
 import com.smoothspark.petclinic.service.SpecialityService;
 import org.springframework.stereotype.Service;
 
@@ -10,10 +10,10 @@ import java.util.Set;
  * Created by SmoothSpark in 10/30/2018
  */
 @Service
-public class SpecialityServiceMap extends AbstractMapService<Speciality, Long> implements SpecialityService {
+public class SpecialityServiceMap extends AbstractMapService<Specialty, Long> implements SpecialityService {
 
     @Override
-    public Set<Speciality> findAll() {
+    public Set<Specialty> findAll() {
         return super.findAll();
     }
 
@@ -23,17 +23,17 @@ public class SpecialityServiceMap extends AbstractMapService<Speciality, Long> i
     }
 
     @Override
-    public void delete(Speciality speciality) {
-        super.delete(speciality);
+    public void delete(Specialty specialty) {
+        super.delete(specialty);
     }
 
     @Override
-    public Speciality save(Speciality speciality) {
-        return super.save(speciality);
+    public Specialty save(Specialty specialty) {
+        return super.save(specialty);
     }
 
     @Override
-    public Speciality findById(Long id) {
+    public Specialty findById(Long id) {
         return super.findById(id);
     }
 }

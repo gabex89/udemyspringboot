@@ -1,10 +1,17 @@
 package com.smoothspark.petclinic.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 /**
  * Created by SmoothSpark in 04/11/2018
  */
-public class Speciality extends BaseEntity {
+@Entity
+@Table(name = "specialties")
+public class Specialty extends BaseEntity {
 
+    @Column(name = "description")
     private String description;
 
     public String getDescription() {

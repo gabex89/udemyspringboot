@@ -1,6 +1,6 @@
 package com.smoothspark.petclinic.service.map;
 
-import com.smoothspark.petclinic.model.Speciality;
+import com.smoothspark.petclinic.model.Specialty;
 import com.smoothspark.petclinic.model.Vet;
 import com.smoothspark.petclinic.service.SpecialityService;
 import com.smoothspark.petclinic.service.VetService;
@@ -37,11 +37,11 @@ public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetS
 
     @Override
     public Vet save(Vet vet) {
-        Set<Speciality> specialities = vet.getSpecialities();
+        Set<Specialty> specialities = vet.getSpecialties();
         if (specialities.size() > 0) {
             specialities.forEach(speciality -> {
                 if (speciality.getId() == null) {
-                    Speciality savedSpec = specialityService.save(speciality);
+                    Specialty savedSpec = specialityService.save(speciality);
                     speciality.setId(savedSpec.getId());
                 }
             });

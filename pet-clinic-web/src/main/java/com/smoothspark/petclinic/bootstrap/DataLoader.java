@@ -3,7 +3,7 @@ package com.smoothspark.petclinic.bootstrap;
 import com.smoothspark.petclinic.model.Owner;
 import com.smoothspark.petclinic.model.Pet;
 import com.smoothspark.petclinic.model.PetType;
-import com.smoothspark.petclinic.model.Speciality;
+import com.smoothspark.petclinic.model.Specialty;
 import com.smoothspark.petclinic.model.Vet;
 import com.smoothspark.petclinic.service.OwnerService;
 import com.smoothspark.petclinic.service.PetTypeService;
@@ -50,17 +50,17 @@ public class DataLoader implements CommandLineRunner {
         cat.setName("Cat");
         PetType savedCatType = petTypeService.save(cat);
 
-        Speciality speciality1 = new Speciality();
-        speciality1.setDescription("Radiology");
-        Speciality savedSpeciality1 = specialityService.save(speciality1);
+        Specialty specialty1 = new Specialty();
+        specialty1.setDescription("Radiology");
+        Specialty savedSpecialty1 = specialityService.save(specialty1);
 
-        Speciality speciality2 = new Speciality();
-        speciality2.setDescription("Surgery");
-        Speciality savedSpeciality2 = specialityService.save(speciality2);
+        Specialty specialty2 = new Specialty();
+        specialty2.setDescription("Surgery");
+        Specialty savedSpecialty2 = specialityService.save(specialty2);
 
-        Speciality speciality3 = new Speciality();
-        speciality3.setDescription("Dentistry");
-        Speciality savedSpeciality3 = specialityService.save(speciality3);
+        Specialty specialty3 = new Specialty();
+        specialty3.setDescription("Dentistry");
+        Specialty savedSpecialty3 = specialityService.save(specialty3);
 
         Owner owner1 = new Owner();
         owner1.setFirstName("Michael");
@@ -97,14 +97,14 @@ public class DataLoader implements CommandLineRunner {
         Vet vet1 = new Vet();
         vet1.setFirstName("Sam");
         vet1.setLastName("Axe");
-        vet1.getSpecialities().add(savedSpeciality1);
+        vet1.getSpecialties().add(savedSpecialty1);
 
         vetService.save(vet1);
 
         Vet vet2 = new Vet();
         vet2.setFirstName("Sam");
         vet2.setLastName("Max");
-        vet1.getSpecialities().add(savedSpeciality2);
+        vet1.getSpecialties().add(savedSpecialty2);
 
         vetService.save(vet2);
     }
