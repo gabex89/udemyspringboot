@@ -7,7 +7,7 @@ import com.smoothspark.petclinic.model.Specialty;
 import com.smoothspark.petclinic.model.Vet;
 import com.smoothspark.petclinic.service.OwnerService;
 import com.smoothspark.petclinic.service.PetTypeService;
-import com.smoothspark.petclinic.service.SpecialityService;
+import com.smoothspark.petclinic.service.SpecialtyService;
 import com.smoothspark.petclinic.service.VetService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -23,14 +23,14 @@ public class DataLoader implements CommandLineRunner {
     private final OwnerService ownerService;
     private final VetService vetService;
     private final PetTypeService petTypeService;
-    private final SpecialityService specialityService;
+    private final SpecialtyService specialtyService;
 
     public DataLoader(OwnerService ownerService, VetService vetService,
-                      PetTypeService petTypeService, SpecialityService specialityService) {
+                      PetTypeService petTypeService, SpecialtyService specialtyService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
-        this.specialityService = specialityService;
+        this.specialtyService = specialtyService;
     }
 
     @Override
@@ -52,15 +52,15 @@ public class DataLoader implements CommandLineRunner {
 
         Specialty specialty1 = new Specialty();
         specialty1.setDescription("Radiology");
-        Specialty savedSpecialty1 = specialityService.save(specialty1);
+        Specialty savedSpecialty1 = specialtyService.save(specialty1);
 
         Specialty specialty2 = new Specialty();
         specialty2.setDescription("Surgery");
-        Specialty savedSpecialty2 = specialityService.save(specialty2);
+        Specialty savedSpecialty2 = specialtyService.save(specialty2);
 
         Specialty specialty3 = new Specialty();
         specialty3.setDescription("Dentistry");
-        Specialty savedSpecialty3 = specialityService.save(specialty3);
+        Specialty savedSpecialty3 = specialtyService.save(specialty3);
 
         Owner owner1 = new Owner();
         owner1.setFirstName("Michael");

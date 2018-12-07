@@ -2,7 +2,7 @@ package com.smoothspark.petclinic.service.map;
 
 import com.smoothspark.petclinic.model.Specialty;
 import com.smoothspark.petclinic.model.Vet;
-import com.smoothspark.petclinic.service.SpecialityService;
+import com.smoothspark.petclinic.service.SpecialtyService;
 import com.smoothspark.petclinic.service.VetService;
 import org.springframework.stereotype.Service;
 
@@ -14,10 +14,10 @@ import java.util.Set;
 @Service
 public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
 
-    private final SpecialityService specialityService;
+    private final SpecialtyService specialtyService;
 
-    public VetServiceMap(SpecialityService specialityService) {
-        this.specialityService = specialityService;
+    public VetServiceMap(SpecialtyService specialtyService) {
+        this.specialtyService = specialtyService;
     }
 
     @Override
@@ -41,7 +41,7 @@ public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetS
         if (specialities.size() > 0) {
             specialities.forEach(speciality -> {
                 if (speciality.getId() == null) {
-                    Specialty savedSpec = specialityService.save(speciality);
+                    Specialty savedSpec = specialtyService.save(speciality);
                     speciality.setId(savedSpec.getId());
                 }
             });

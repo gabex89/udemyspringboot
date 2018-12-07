@@ -1,7 +1,7 @@
 package com.smoothspark.petclinic.service.map;
 
 import com.smoothspark.petclinic.model.Specialty;
-import com.smoothspark.petclinic.service.SpecialityService;
+import com.smoothspark.petclinic.service.SpecialtyService;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
@@ -10,7 +10,7 @@ import java.util.Set;
  * Created by SmoothSpark in 10/30/2018
  */
 @Service
-public class SpecialityServiceMap extends AbstractMapService<Specialty, Long> implements SpecialityService {
+public class SpecialtyServiceMap extends AbstractMapService<Specialty, Long> implements SpecialtyService {
 
     @Override
     public Set<Specialty> findAll() {
