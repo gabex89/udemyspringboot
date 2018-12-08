@@ -2,6 +2,7 @@ package com.smoothspark.petclinic.service.map;
 
 import com.smoothspark.petclinic.model.Visit;
 import com.smoothspark.petclinic.service.VisitService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
@@ -10,6 +11,7 @@ import java.util.Set;
  * Created by SmoothSpark in 07/12/2018
  */
 @Service
+@Profile({"default", "map"})
 public class VisitMapService extends AbstractMapService<Visit, Long> implements VisitService {
 
     @Override
